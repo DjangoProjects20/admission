@@ -137,6 +137,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 #STATIC_ROOT = '/var/www/sites/static'
 
 #MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/django/admission/static/asset'
+STATIC_ROOT = '/home/django/admission/static'
 MEDIA_ROOT = '/home/django/admission/media'
 #MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
