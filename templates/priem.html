@@ -1,0 +1,79 @@
+<!--==========================
+      Portfolio Section
+    ============================-->
+    <style> .del{ visibility: hidden;} </style>
+    <section id="portfolio"  class="section-bg posts_and_video del" >
+      <div class="container">
+
+        <header class="section-header">
+         <!-- нужно автоматическое определение месяца -->
+          <h3 class="section-title">график свободного времени на прием с {{date_norm.date}} по {{date_two.date}} , Внимание не занимайте больше одного времени помните что кто-то может нуждаться в нашей помощи</h3>
+        </header>
+
+       <!-- <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">с 1 по 7</li>
+              <li data-filter=".filter-app">с 8 по 15</li>
+              <li data-filter=".filter-card">с 15 по 22</li>
+              <li data-filter=".filter-web">с 22 по 31</li>
+            </ul>
+          </div>
+        </div> -->
+
+        <div class="row portfolio-container">
+<!-- +   (цикл) одно время для записи ----------------------------------------------------------------------------------------------------------->
+          
+
+
+
+
+
+          {% for time_acceptancemass in time_acceptances %}
+          <div class="col-lg-4 col-md-3    ">
+            <div class="portfolio-wrap">
+              <figure>
+              <div class="clock__style">
+                  <!-- + вывод времение по одной группе -->
+                   <div class="clock__item">{{time_acceptancemass.label_time.time}}  </div>
+                   <!-- - вывод времение по одной группе -->
+              </div>
+               
+                  <!--<img src="img/portfolio/app1.jpg" class="img-fluid" alt="">-->
+                <!--<a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>-->
+                
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#"></a></h4>
+                <p style="font-size: 16pt; margin-top: -20pt;" class="text-center">{{time_acceptancemass.label_time.date}}<br />
+                  <a href="{% url 'admission_page' time_acceptancemass.id %}"  style="padding: 5px 5px;" class=" btn btn-success " title="More Details">Записаться на это время</a><br />
+             
+                </p>
+               </div>
+            </div>
+          </div>
+          {%endfor %}
+<!-- - (цикл) одно время для записи -------------------------------------------------------------------------------------------------------------->
+ 
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
+<br /><br />
+<input type="text" style="display: none ;"  name="password" id="password_before" value="{{pass_priem}}">
+ <form id="password_test"  style="border: 1px solid #fff;"action="" class="form_password">
+ <div class="container">
+    <div class="row">
+    <div class="col-md-4"></div>
+        <div class="form-group text-center">
+        <label>для просмотра страницы введите пароль</label><br />
+            <input type="text"  name="password" id="password">
+            <button  id="submit_btn" class="btn btn-success"
+            data-password_from_bd="{{pass_priem}}">
+            проверить пароль</button>
+        </div>
+    </div>
+ </div>    
+  </form>
+ <br /><br /><br /><br /><br /><br />

@@ -1,0 +1,15 @@
+Генератор сгенирировал времена приемов с 
+{% for time_acceptance_periodmass in time_acceptance_periods %}
+{{time_acceptance_periodmass.time_lable_one.date}}
+ по 
+{{time_acceptance_periodmass.time_lable_two.date}}
+<br />
+с интервалом 
+{{time_acceptance_periodmass.period}} секунды каждый прием.
+{%endfor %}<br /><br />
+
+Внимание не забудьте выключить этот генератор
+
+
+
+, не перегружайте эту страницу это приведет к повторной генерации 

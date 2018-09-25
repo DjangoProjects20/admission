@@ -1,0 +1,73 @@
+{%extends "base.html"%}
+{%load static%}
+{% block content %}
+
+
+<section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h3>запись на прием (<stong>запишите или запомните)</stong></h3>
+          <p style="font-weight: bold; font-size: 30pt;">Время приема {{time_acceptances.label_time}}</p>
+          <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          
+          <form action="{% url  'form_email' %}" method="post" role="form" class="ontactForm">
+           {%csrf_token%}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="ФИО" data-rule="minlen:4" data-msg="Вам нужно ввести ФИО" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="EMAIL" data-rule="email" data-msg="Пожайлуста введите почтовый адрес правильно" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Номер телефона" data-rule="required" data-msg="введите Ваш номер телефона" />
+              <div class="validation"></div>
+            </div>
+           
+            <div class="form-group">
+              <textarea class="form-control" style="display: none;"   name="sms" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" >{{time_acceptances.id}}</textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Отправить заявку</button></div>
+          </form>
+        </div>
+
+        <div class="row contact-info">
+
+          <!--<div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>адрес</h3>
+              <address>{{adress.descrip}}</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Телефоный номер</h3>
+              <p><a href="tel:{{telefon.descrip}}">{{telefon.descrip}}</a></p>
+            </div>
+          </div>-->
+
+          <div class="col-md-12">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Почта</h3>
+              <p><a href="mailto:info@example.com">{{email.descrip}}</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      
+
+      </div>
+    </section><!-- #contact -->
+{% endblock %}
