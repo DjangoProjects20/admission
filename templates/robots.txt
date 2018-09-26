@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:/admin
+Disallow:/priem
+Disallow:/generator
+Disallow:/admission_page
+Host:194.58.102.251
+Sitemap:http://194.58.102.251/sitemap.xml
