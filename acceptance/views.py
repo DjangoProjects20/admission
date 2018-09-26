@@ -115,7 +115,6 @@ def admission_one(request, admission_id):
  
 def priem(request):
     password_priem_from_bd = useful_little_things.objects.get(name_english = 'password_priem')
-    print (password_priem_from_bd)
     pass_priem = int(password_priem_from_bd.descrip )*3 
     time_acceptances = time_acceptance.objects.filter(is_active=True)
     time_acceptance_periods = time_acceptance_period.objects.filter(is_active2 = True)
